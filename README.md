@@ -1,2 +1,2 @@
-# eat-da-burger
-UNC Coding Bootcamp Activity XIV
+# Eat Da Burger
+UNC Coding Bootcamp Activity XIV: Handlebars
