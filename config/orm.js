@@ -1,30 +1,57 @@
-<<<<<<< HEAD
 var connection = require("./connection.js");
 
-module.exports = function(data) {
-  orm.selectAll({}).then(function(res) {
+function questMarks(num) {
+  var arr = [];
 
-  });
+  for (var i = 0; i < num; i++) {
+    arr.push("?");
+  }
 
-  orm.insertOne({}).then(function(res) {
+  return arr.toString();
+}
 
-  });
-
-  orm.updateOne({}).then(function(res) {
-
-  });
-};
-=======
-var connection = require("./connection.js");
+function objectToSql(ob) {
+  var arr = [];
+  for (var key in ob) {
+    var value = ob[key];
+    if (Object.hasOwnProperty.call(ob, key)) {
+      if (typeof value === "string" && value.indexOf(" ") >= 0) {
+        value = `"${value}"`;
+      }
+      arr.push(`${key}=${value}`);
+    }
+  }
+  return arr.toString();
+}
 
 var orm = {
-  selectAll()
-  
-  insertOne()
-  
-  updateOne()
-  
+  all: function(cb) {
+    var qS = "select * from burgers";
+    conn.query(qS, function(err, res) {
+      if(err) throw err;
+      cb(res);
+    });
+  },
+  create: function(table, cols, vals, cb) {
+    var qS = `insert into ${table}`;
+    qS += ` (${cols.toString()}) values (${questMarks(vals.length)}) `;
+    console.log(qS);
+
+    conn.query(qS, vals, function(err, res) {
+      if(err) throw err;
+      cb(res);
+    });
+  },
+  update: function(table, objectCV, condition, cb) {
+    var qS = `update ${table}`;
+    qS += ` set ${objectToSql(objectCV)} where ${condition}`;
+    console.log(qS);
+
+    conn.query(qS, function(err, res) {
+      if(err) throw err;
+      cb(res);
+    });
+  }
 };
 
 module.exports = orm;
->>>>>>> c5f128b46e0aba8a034c224eb38aaf7b9d9b1176

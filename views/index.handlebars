@@ -1,0 +1,30 @@
+<h1>Eat Da Burger!</h1>
+
+<h2>Select Your Yummy Burgie</h2>
+
+<ul>
+  {{#each burgers}}
+  {{/each}}
+</ul>
+
+<h3>Devoured</h3>
+
+<ul>
+  {{#each burgers}}
+  {{/each}}
+</ul>
+
+<h2>Add A Burgie</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="burg-name">Burger Name:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="devoured">Devoured?</label><br>
+  </div>
+
+  <button type="submit">DEVOUR IT</button>
+</form>
