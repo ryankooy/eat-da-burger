@@ -1,12 +1,10 @@
-var connection = require("./connection.js");
+var conn = require("./connection.js");
 
 function questMarks(num) {
   var arr = [];
-
   for (var i = 0; i < num; i++) {
     arr.push("?");
   }
-
   return arr.toString();
 }
 
@@ -32,8 +30,8 @@ var orm = {
       cb(res);
     });
   },
-  create: function(table, cols, vals, cb) {
-    var qS = `insert into ${table}`;
+  create: function(cols, vals, cb) {
+    var qS = "insert into burgers";
     qS += ` (${cols.toString()}) values (${questMarks(vals.length)}) `;
     console.log(qS);
 
@@ -42,8 +40,8 @@ var orm = {
       cb(res);
     });
   },
-  update: function(table, objectCV, condition, cb) {
-    var qS = `update ${table}`;
+  update: function(objectCV, condition, cb) {
+    var qS = "update burgers";
     qS += ` set ${objectToSql(objectCV)} where ${condition}`;
     console.log(qS);
 

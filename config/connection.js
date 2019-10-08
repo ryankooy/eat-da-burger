@@ -13,7 +13,7 @@ conn.connect(function(err) {
     console.error(`Error connecting: ${err.stack}`);
     return;
   }
-  console.log(`Connected as id ${connection.threadId}`);
+  console.log(`Connected as id ${conn.threadId}`);
 });
 
 module.exports = conn;
