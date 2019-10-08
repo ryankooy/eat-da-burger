@@ -23,14 +23,14 @@ function objectToSql(ob) {
 }
 
 var orm = {
-  all: function(cb) {
+  selectAll: function(cb) {
     var qS = "select * from burgers";
     conn.query(qS, function(err, res) {
       if(err) throw err;
       cb(res);
     });
   },
-  create: function(cols, vals, cb) {
+  insertOne: function(cols, vals, cb) {
     var qS = "insert into burgers";
     qS += ` (${cols.toString()}) values (${questMarks(vals.length)}) `;
     console.log(qS);
@@ -40,7 +40,7 @@ var orm = {
       cb(res);
     });
   },
-  update: function(objectCV, condition, cb) {
+  updateOne: function(objectCV, condition, cb) {
     var qS = "update burgers";
     qS += ` set ${objectToSql(objectCV)} where ${condition}`;
     console.log(qS);
