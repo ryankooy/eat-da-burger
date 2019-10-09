@@ -6,12 +6,12 @@
     <h3>Select Your Yummy Burgie</h3>
     <ul>
       {{#each burger}}
-        <div class="card" style="width: 18rem;">
+        <div class="card burgie" trigger="0" style="width: 18rem;">
           <div class="row no-gutters">
             <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
             <div class="card-body">
               <h5 class="card-title">{{burger_name}}</h5>
-              <input class="btn btn-danger btn-sm" type="submit" value="DEVOUR IT">
+              <input class="btn btn-danger btn-sm devour" type="submit" value="DEVOUR IT">
             </div>
           </div>
         </div>
@@ -36,8 +36,8 @@
     <h3>Add A Burgie</h3>
     <div class="form-group">
       <label for="burg-name">Burger Name:</label>
-      <input type="text" id="ca" name="name">
-      <input class="btn btn-secondary btn-sm" type="submit" value="Submit">
+      <input type="text" id="new-burg" name="name">
+      <input class="btn btn-secondary btn-sm go-burg" type="submit" value="Submit">
     </div>
   </form>
 
@@ -58,7 +58,19 @@
   </div>
   --}}
   <a href="https://www.freepik.com/free-photos-vectors/food">Food vector created by dooder - www.freepik.com</a>
-  
-  <script type="text/javascript"></script>
+
+  <script type="text/javascript">
+    $(".go-burg").on("click", function() {
+      var burg = $("#new-burg").val();
+    });
+    
+    $(".devour").on("click", function() {
+      if($(".burgie").attr("trigger") === "0") {
+        $(".burgie").children().addClass("disabled");
+        $(".burgie").animate({ "left": "300px" }, 700);
+        $(".burgie").attr("trigger", "1");
+      };
+    });
+  </script>
 
 </div>
