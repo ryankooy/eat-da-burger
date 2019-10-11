@@ -13,15 +13,16 @@ router.get("/", function(req, res) {
   });
 });
 
-// router.post("/", function(req, res) {
-//   burger.insertOne([
-//     "burger_name", "devoured"
-//   ], [
-//     req.body.burger_name, req.body.devoured
-//   ], function(result) {
-//     res.json({ id: result.insertId });
-//   });
-// });
+router.post("/", function(req, res) {
+  burger.insertOne([
+    "burger_name"
+  ], [
+    req.body.burger_name
+  ], function(result) {
+    burgerObject.push(result);
+    console.log(result);
+  });
+});
 
 // router.put("/", function(req, res) {
 //   burger.updateOne([
