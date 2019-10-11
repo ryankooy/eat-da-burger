@@ -23,11 +23,11 @@ function objectToSql(ob) {
 }
 
 var orm = {
-  selectAll: function(cb) {
+  selectAll: function() {
     var qS = "select * from burgers";
     conn.query(qS, function(err, res) {
       if(err) throw err;
-      cb(res);
+      // cb(res);
     });
   },
   // insertOne: function(cols, vals, cb) {
