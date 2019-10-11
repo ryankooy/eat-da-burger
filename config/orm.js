@@ -30,26 +30,26 @@ var orm = {
       cb(res);
     });
   },
-  insertOne: function(cols, vals, cb) {
-    var qS = "insert into burgers";
-    qS += ` (${cols.toString()}) values (${questMarks(vals.length)}) `;
-    console.log(qS);
+  // insertOne: function(cols, vals, cb) {
+  //   var qS = "insert into burgers";
+  //   qS += ` (${cols.toString()}) values (${questMarks(vals.length)}) `;
+  //   console.log(qS);
 
-    conn.query(qS, vals, function(err, res) {
-      if(err) throw err;
-      cb(res);
-    });
-  },
-  updateOne: function(objectCV, condition, cb) {
-    var qS = "update burgers";
-    qS += ` set ${objectToSql(objectCV)} where ${condition}`;
-    console.log(qS);
+  //   conn.query(qS, vals, function(err, res) {
+  //     if(err) throw err;
+  //     cb(res);
+  //   });
+  // },
+  // updateOne: function(objectCV, condition, cb) {
+  //   var qS = "update burgers";
+  //   qS += ` set ${objectToSql(objectCV)} where ${condition}`;
+  //   console.log(qS);
 
-    conn.query(qS, function(err, res) {
-      if(err) throw err;
-      cb(res);
-    });
-  }
+  //   conn.query(qS, function(err, res) {
+  //     if(err) throw err;
+  //     cb(res);
+  //   });
+  // }
 };
 
 module.exports = orm;
