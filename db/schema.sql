@@ -1,4 +1,4 @@
-use burgers_db;
+use kckwicbec2ar46zz;
 
 create table burgers (
   id INT NOT NULL AUTO_INCREMENT,
