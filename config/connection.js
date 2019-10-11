@@ -6,10 +6,7 @@ var conn = mysql.createConnection({
   port: 3306,
   user: 'yjtz1wsr8w7fhwlr',
   password: process.env.JAWSDB_PASSWORD,
-  database: 'xnvmz8qdtdiya9em',
-  details: {
-    dialect: 'mysql'
-  }
+  database: 'xnvmz8qdtdiya9em'
 });
 
 conn.connect(function(err) {

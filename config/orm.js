@@ -39,17 +39,17 @@ var orm = {
       if(err) throw err;
       cb(res);
     });
-  }
-  // updateOne: function(objectCV, condition, cb) {
-  //   var qS = "update burgers";
-  //   qS += ` set ${objectToSql(objectCV)} where ${condition}`;
-  //   console.log(qS);
+  },
+  updateOne: function(objColVals, condition, cb) {
+    var qS = "update burgers";
+    qS += ` set ${objectToSql(objColVals)} where ${condition}`;
+    console.log(qS);
 
-  //   conn.query(qS, function(err, res) {
-  //     if(err) throw err;
-  //     cb(res);
-  //   });
-  // }
+    conn.query(qS, function(err, res) {
+      if(err) throw err;
+      cb(res);
+    });
+  }
 };
 
 module.exports = orm;
