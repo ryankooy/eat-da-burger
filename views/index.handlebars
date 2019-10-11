@@ -42,7 +42,9 @@
     </div>
   </div>
 
-  <a href="https://www.freepik.com/free-photos-vectors/food">Food vector created by dooder - www.freepik.com</a>
+  <footer>
+    <a href="https://www.freepik.com/free-photos-vectors/food">Food vector created by dooder - www.freepik.com</a>
+  </footer>
 
   <script type="text/javascript">
     $(".go-burg").on("click", function() {
@@ -52,11 +54,8 @@
     
     $(".devour").on("click", function() {
       if($(".burgie").attr("trigger") === "0") {
-        $(".burgie").children().addClass("disabled");
         $(".burgie").animate({ "left": "500px" }, 700);
         $(".burgie").attr("trigger", "1");
-        $(".devour").remove();
-        $(".burg").remove();
       };
     });
   </script>
