@@ -1,35 +1,38 @@
 <div class="all">
 
-  <h1>Eat Da Burger!</h1>
+  <h1 id="header">EAT DA BURGER!</h1>
 
   <div class="container">
-    <h3>Select Your Yummy Burgie</h3>
-    <ul>
-      {{#each burger}}
-        <div class="card burgie" trigger="0" style="width: 18rem;">
-          <div class="row no-gutters">
-            <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
-            <div class="card-body">
-              <h5 class="card-title">{{burger_name}}</h5>
-              <input class="btn btn-danger btn-sm devour" type="submit" value="DEVOUR IT">
+    <div class="row">
+      <div class="col-6 column1">
+        <h3>Select Your Yummy Burgie</h3>
+        <ul>
+          {{#each burger}}
+            <div class="card burgie" trigger="0" style="width: 18rem;">
+              <div class="row no-gutters">
+                <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
+                <div class="card-body">
+                  <h5 class="card-title">{{burger_name}}</h5>
+                  <input class="btn btn-danger btn-sm devour" type="submit" value="DEVOUR IT">
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      {{/each}}
-    </ul>
-  </div>
-
-  <div class="container">
-    <h3>Devoured</h3>
-    <ul>
-      {{#each burger}}
-        {{#if devoured}}
-          <li>
-            <p>Devoured: {{burger_name}}</p>
-          </li>
-        {{/if}}
-      {{/each}}
-    </ul>
+          {{/each}}
+        </ul>
+      </div>
+      <div class="col-6 column2">
+        <h3>Devoured</h3>
+        <ul>
+          {{#each burger}}
+            {{#if devoured}}
+              <li>
+                <p>Devoured: {{burger_name}}</p>
+              </li>
+            {{/if}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
   </div>
 
   <form class="create-form">
@@ -41,22 +44,6 @@
     </div>
   </form>
 
-  {{!-- 
-  <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
-  <button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button>
-
-  <button type="button" class="btn btn-lg btn-primary" disabled>Primary button</button>
-  <button type="button" class="btn btn-secondary btn-lg" disabled>Button</button>
-
-  <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-  --}}
   <a href="https://www.freepik.com/free-photos-vectors/food">Food vector created by dooder - www.freepik.com</a>
 
   <script type="text/javascript">
@@ -68,8 +55,10 @@
     $(".devour").on("click", function() {
       if($(".burgie").attr("trigger") === "0") {
         $(".burgie").children().addClass("disabled");
-        $(".burgie").animate({ "left": "300px" }, 700);
+        $(".burgie").animate({ "left": "500px" }, 700);
         $(".burgie").attr("trigger", "1");
+        $(".devour").remove();
+        $(".burg").remove();
       };
     });
   </script>

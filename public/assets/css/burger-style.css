@@ -4,20 +4,39 @@
 
 .all {
   background-color: lemonchiffon;
+  font-family: 'Ranchers', cursive;
+}
+
+#header {
+  font-family: 'Londrina Solid', cursive;
+  font-size: 70px;
+  color: lightcoral;
+}
+
+container {
+  max-width: 700x;
+}
+
+.column1, .column2 {
+  border: 2px solid lightcoral;
+  overflow: hidden;
+  box-shadow: 5px -5px 10px grey inset;
 }
 
 .burg {
   max-width: 100px;
   max-height: 100px;
-  margin-left: 15px;
+  margin-left: 18px;
   margin-top: 3px;
 }
 
 .burgie {
   position: relative;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
 .disabled {
-  color: grey;
-  background-color: rgba(0, 0, 0, .2);
+  color: ghostwhite;
+  background-color: rgba(230, 0, 0, 0.5);
 }
