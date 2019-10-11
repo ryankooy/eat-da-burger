@@ -24,7 +24,7 @@ function objectToSql(ob) {
 
 var orm = {
   selectAll: function(cb) {
-    var qS = "select * from burgers";
+    var qS = "select * from burgers;";
     conn.query(qS, function(err, res) {
       if(err) throw err;
       cb(res);
@@ -32,7 +32,7 @@ var orm = {
   },
   insertOne: function(cols, vals, cb) {
     var qS = "insert into burgers";
-    qS += ` (${cols.toString()}) values (${questMarks(vals.length)}) `;
+    qS += ` (${cols.toString()}) values (${questMarks(vals.length)});`;
     console.log(qS);
 
     conn.query(qS, vals, function(err, res) {
