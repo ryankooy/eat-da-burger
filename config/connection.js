@@ -1,7 +1,6 @@
 var mysql = require('mysql');
 
 var conn = mysql.createConnection({
-  'use_env_variable': 'JAWSDB_URL',
   host: 'localhost',
   port: 3306,
   user: 'root',
