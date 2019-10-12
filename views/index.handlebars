@@ -1,26 +1,55 @@
 <div class="all">
 
-  <h1 id="header">EAT DA BURGER!</h1>
-
   <div class="container">
-    <form class="create-form">
-      <div class="form-group">
-        <label for="burg-name"><h5>Add A Burgie:</h5></label>
-        <input type="text" id="new-burg" name="name">
-        <input class="btn btn-secondary btn-sm go-burg" type="submit" value="Submit">
-      </div>
-    </form>
+    <nav class="navbar fixed-top navbar-light bg-dark" id="navvie">
+      <a class="navbar-brand"><h1 id="header">EAT DA BURGIE!</h1></a>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" id="new-burg" type="text" placeholder="Add A Burgie" aria-label="Search">
+        <button class="btn my-2 my-sm-0" id="go-burg" type="submit">Submit</button>
+      </form>
+    </nav>
+  </div>
+
+  <div class="container cont2">
+    <div class="d-flex justify-content-center burg-line">
+      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
+      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
+      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
+      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
+      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
+      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
+      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
+      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
+      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
+      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
+      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
+      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
+      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
+      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
+      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
+      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
+      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
+      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
+      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
+      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
+      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
+      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
+      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
+      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
+      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
+      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
+      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
+    </div>
     <div class="row">
       <div class="col-6 column1">
         <h3>Select Your Yummy Burgie</h3>
         <ul>
           {{#each burger}}
-            <div class="card burgie" trigger="0" style="width: 18rem;">
+            <div class="card burgie" trigger="0">
               <div class="row no-gutters">
-                <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
                 <div class="card-body">
                   <h5 class="card-title">{{burger_name}}</h5>
-                  <input class="btn btn-danger btn-sm devour" type="submit" value="DEVOUR IT">
+                  <button class="btn btn-dark btn-sm devour" type="submit">DEVOUR IT</button>
                 </div>
               </div>
             </div>
@@ -42,8 +71,8 @@
     </div>
   </div>
 
-  <footer>
-    <a href="https://www.freepik.com/free-photos-vectors/food">Food vector created by dooder - www.freepik.com</a>
+  <footer class="d-flex justify-content-center">
+    <a href="https://www.freepik.com/free-photos-vectors/food" id="credit" target="_blank">Food vector created by dooder - www.freepik.com</a>
   </footer>
 
   <script type="text/javascript">
