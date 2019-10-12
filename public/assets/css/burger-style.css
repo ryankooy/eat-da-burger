@@ -36,10 +36,7 @@ h3 {
 }
 
 .column1, .column2 {
-  /* border: 1px solid white; */
   overflow: hidden;
-  /* box-shadow: 0px 0px 10px grey inset;
-  background-color: white; */
 }
 
 .burg {
@@ -48,7 +45,7 @@ h3 {
   margin: 0px 10px 20px 10px;
 }
 
-.burgie {
+.burgie, .stuck {
   height: 80px;
   width: 100%;
   position: relative;
@@ -61,6 +58,7 @@ h3 {
 
 .devour {
   width: 100%;
+  max-width: 150px;
   height: 30px;
 }
 
@@ -73,7 +71,7 @@ h3 {
 }
 
 @media screen and (max-width: 728px) {
-  .burgie {
+  .burgie, .stuck {
     position: relative;
     margin-left: 0;
     width: 10rem;

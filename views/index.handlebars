@@ -45,14 +45,16 @@
         <h3>Select Your Yummy Burgie</h3>
         <ul>
           {{#each burger}}
-            <div class="card burgie" trigger="0">
-              <div class="row no-gutters">
-                <div class="card-body">
-                  <h5 class="card-title">{{burger_name}}</h5>
-                  <button class="btn btn-dark btn-sm devour" type="submit">DEVOUR IT</button>
+            {{#unless devoured}}
+              <div class="card burgie" value="{{id}}" trigger="0">
+                <div class="row no-gutters">
+                  <div class="card-body">
+                    <h5 class="card-title">{{burger_name}}</h5>
+                    <button class="btn btn-sm my-2 my-sm-0 devour" type="submit">DEVOUR IT</button>
+                  </div>
                 </div>
               </div>
-            </div>
+            {{/unless}}
           {{/each}}
         </ul>
       </div>
@@ -61,9 +63,13 @@
         <ul>
           {{#each burger}}
             {{#if devoured}}
-              <li>
-                <p>Devoured: {{burger_name}}</p>
-              </li>
+            <div class="card stuck">
+              <div class="row no-gutters">
+                <div class="card-body">
+                  <h5 class="card-title">{{burger_name}}</h5>
+                </div>
+              </div>
+            </div>
             {{/if}}
           {{/each}}
         </ul>
@@ -78,12 +84,11 @@
   <script type="text/javascript">
     $(".go-burg").on("click", function() {
       var burg = $("#new-burg").val();
-      burgerObject.push(burg);
     });
     
     $(".devour").on("click", function() {
       if($(".burgie").attr("trigger") === "0") {
-        $(".burgie").animate({ "left": "500px" }, 700);
+        $(".burgie").animate({ "left": "600px" }, 700);
         $(".burgie").attr("trigger", "1");
       };
     });
