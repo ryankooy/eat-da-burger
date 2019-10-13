@@ -42,7 +42,7 @@ var orm = {
   },
   updateOne: function(objColVals, condition, cb) {
     var qS = "update burgers";
-    qS += ` set ${objectToSql(objColVals)} where ${condition}`;
+    qS += ` set ${objectToSql(objColVals)} where ${condition};`;
     console.log(qS);
 
     conn.query(qS, function(err, res) {
