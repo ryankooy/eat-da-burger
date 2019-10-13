@@ -4,7 +4,7 @@ var burger = require("../models/burger.js");
 var router = express.Router();
 
 router.get("/", function(req, res) {
-  burger.selectAll(function(data) {
+  burger.all(function(data) {
     var burgerObject = {
       burger: data
     };
@@ -25,7 +25,7 @@ router.post("/", function(req, res) {
 
 router.put("/:id", function(req, res) {
   var condition = "id = " + req.params.id;
-  burger.updateOne({
+  burger.update({
      devoured: true
   }, condition,
   function(result) {
