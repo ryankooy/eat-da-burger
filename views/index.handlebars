@@ -3,9 +3,9 @@
   <div class="container">
     <nav class="navbar fixed-top navbar-light bg-dark" id="navvie">
       <a class="navbar-brand"><h1 id="header">EAT DA BURGIE!</h1></a>
-      <form class="form-inline">
-        <input class="form-control mr-sm-2" id="new-burg" type="text" placeholder="Add A Burgie" aria-label="Search">
-        <button class="btn my-2 my-sm-0" id="go-burg" type="submit">Submit</button>
+      <form class="form-inline" action="/burgers" method="POST">
+        <input class="form-control mr-sm-2" id="new-burg" type="text">
+        <button class="btn my-2 my-sm-0" id="go-burg" type="submit">Add Burgie</button>
       </form>
     </nav>
   </div>
@@ -48,7 +48,7 @@
             {{#unless devoured}}
               <div class="card burgie" value="{{id}}" trigger="0">
                 <div class="row no-gutters">
-                  <div class="card-body">
+                  <div class="card-body" action="/burgers/{{this.id}}?_method=PUT" method="POST">
                     <h5 class="card-title">{{burger_name}}</h5>
                     <button class="btn btn-sm my-2 my-sm-0 devour" type="submit">DEVOUR IT</button>
                   </div>
