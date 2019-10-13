@@ -46,11 +46,11 @@
         <ul>
           {{#each burger}}
             {{#unless devoured}}
-              <div class="card burgie" value="{{id}}" trigger="0">
+              <div class="card burgie" value="{{id}}">
                 <div class="row no-gutters">
                   <div class="card-body" action="/burgers/{{this.id}}?_method=PUT" method="POST">
                     <h5 class="card-title">{{burger_name}}</h5>
-                    <button class="btn btn-sm my-2 my-sm-0 devour" type="submit">DEVOUR IT</button>
+                    <button class="btn btn-sm my-2 my-sm-0 devour" trigger="0" type="submit">DEVOUR IT</button>
                   </div>
                 </div>
               </div>
@@ -81,15 +81,11 @@
     <a href="https://www.freepik.com/free-photos-vectors/food" id="credit" target="_blank">Food vector created by dooder - www.freepik.com</a>
   </footer>
 
-  <script type="text/javascript">
-    $(".go-burg").on("click", function() {
-      var burg = $("#new-burg").val();
-    });
-    
+  <script type="text/javascript" 
     $(".devour").on("click", function() {
-      if($(".burgie").attr("trigger") === "0") {
-        $(".burgie").animate({ "left": "600px" }, 700);
-        $(".burgie").attr("trigger", "1");
+      if($(this).attr("trigger") === "0") {
+        $(this).animate({ "left": "600px" }, 700);
+        $(this).attr("trigger", "1");
       };
     });
   </script>
