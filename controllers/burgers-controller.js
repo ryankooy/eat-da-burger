@@ -19,7 +19,7 @@ router.post("/burgers", function(req, res) {
   ], [
     req.body.burger_name
   ], function(result) {
-    res.redirect('/');
+    res.redirect("/");
   });
 });
 
@@ -29,7 +29,7 @@ router.put("/burgers/:id", function(req, res) {
      devoured: true
   }, condition,
   function(result) {
-     res.redirect('/');
+     res.redirect("/");
   });
 });
 
