@@ -81,11 +81,13 @@
     <a href="https://www.freepik.com/free-photos-vectors/food" id="credit" target="_blank">Food vector created by dooder - www.freepik.com</a>
   </footer>
 
-  <script type="text/javascript" 
+  <script type="text/javascript"
     $(".devour").on("click", function() {
-      if($(".devour").attr("trigger") === "0") {
-        $(this).animate({ "left": "600px" }, 700);
-        $(this).attr("trigger", "1");
+      var eat = $(".devour");
+      var burg = $(".burgie");
+      if($(this(eat)).attr("trigger") === "0") {
+        $(this(burg)).animate({ "left": "600px" }, 700);
+        $(this(eat)).attr("trigger", "1");
       };
     });
   </script>
