@@ -82,9 +82,9 @@
   </footer>
 
   <script type="text/javascript"
-    $(".devour").on("click", function() {
-      var eat = $(".devour");
-      var burg = $(".burgie");
+     var eat = $(".devour");
+     var burg = $(".burgie");
+    $(this(eat)).on("click", function() {
       if($(this(eat)).attr("trigger") === "0") {
         $(this(burg)).animate({ "left": "600px" }, 700);
         $(this(eat)).attr("trigger", "1");
