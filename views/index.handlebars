@@ -84,11 +84,12 @@
   <script type="text/javascript"
      var eat = $(".devour");
      var burg = $(".burgie");
-    $(this(eat)).on("click", function() {
-      if($(this(eat)).attr("trigger") === "0") {
-        $(this(burg)).animate({ "left": "600px" }, 700);
-        $(this(eat)).attr("trigger", "1");
-      };
+    $(this).on("click", function() {
+      $(this).remove();
+      // if($(this(eat)).attr("trigger") === "0") {
+        // $(this(burg)).animate({ "left": "600px" }, 700);
+        // $(this(eat)).attr("trigger", "1");
+      // };
     });
   </script>
 
