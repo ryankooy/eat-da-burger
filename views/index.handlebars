@@ -45,11 +45,11 @@
         <h3>Select Your Yummy Burgie</h3>
         <ul>
           {{#each burger}}
-            {{#unless devoured}}
-              <div class="card burgie" value="{{id}}">
+            {{#unless this.devoured}}
+              <div class="card burgie">
                 <div class="row no-gutters">
                   <div class="card-body" action="/{{this.id}}" method="PUT">
-                    <h5 class="card-title">{{burger_name}}</h5>
+                    <h5 class="card-title">{{this.burger_name}}</h5>
                     <button class="btn btn-sm my-2 my-sm-0 devour" trigger="0" type="submit">DEVOUR IT</button>
                   </div>
                 </div>
@@ -62,11 +62,11 @@
         <h3>Devoured</h3>
         <ul>
           {{#each burger}}
-            {{#if devoured}}
+            {{#if this.devoured}}
             <div class="card stuck">
               <div class="row no-gutters">
                 <div class="card-body">
-                  <h5 class="card-title">{{burger_name}}</h5>
+                  <h5 class="card-title">{{this.burger_name}}</h5>
                 </div>
               </div>
             </div>
@@ -84,13 +84,13 @@
   <script type="text/javascript"
      var eat = $(".devour");
      var burg = $(".burgie");
-    $(".burgie").on("click", function() {
-      $(this).remove();
+    // $(".burgie").on("click", function() {
+      // $(this).remove();
       // if($(this(eat)).attr("trigger") === "0") {
         // $(this(burg)).animate({ "left": "600px" }, 700);
         // $(this(eat)).attr("trigger", "1");
       // };
-    });
+    // });
   </script>
 
 </div>
