@@ -48,7 +48,7 @@
             {{#unless this.devoured}}
               <div class="card burgie">
                 <div class="row no-gutters">
-                 <form class="card-body" action="burger/update/{{this.id}}?_method=PUT" method="POST">
+                 <form class="card-body" action="burger/update/{{this.id}}" method="POST">
                    <h5 class="card-title">{{this.burger_name}}</h5>
                    <input type="hidden" name="devour" value="true">
                    <button class="btn btn-sm my-2 my-sm-0 devour" trigger="0" type="submit">DEVOUR!</button>
