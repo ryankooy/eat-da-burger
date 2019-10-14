@@ -69,6 +69,7 @@ h3 {
 
 .devour, .inlineblock .stuck {
   display: inline-block;
+  text-align: center;
 }
 
 .devour:hover {
@@ -89,13 +90,15 @@ h3 {
   color: lightgreen;
 }
 
-.center {
-  text-align: center;
+#eat, #eat-burg {
+  display: inline-block;
   margin: auto;
 }
 
 .devoured {
   color: lightslategrey;
+  display: inline-block;
+  margin: auto;
 }
 
 #credit {

@@ -71,7 +71,7 @@
             <div class="card stuck flex-item">
               <div class="row no-gutters">
                 <form class="card-body" action="/burger/update/{{this.id}}?_method=PUT" method="POST">
-                  <p class="card-title" class="devoured">{{this.burger_name}}</p>
+                  <div class="devoured">{{this.burger_name}}</div>
                   <input type="hidden" name="devoured" value="true">
                 </form>
               </div>
