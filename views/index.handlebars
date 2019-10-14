@@ -50,7 +50,7 @@
                 <div class="row no-gutters">
                  <form class="card-body" action="burger/update/{{this.id}}?_method=PUT" method="POST">
                    <h5 class="card-title">{{this.burger_name}}</h5>
-                   <input type="hidden" name="devour" value="true">
+                   <input type="hidden" name="devoured" value="false">
                    <button class="btn btn-sm my-2 my-sm-0 devour" trigger="0" type="submit">DEVOUR!</button>
                  </form>
                 </div>
@@ -66,7 +66,9 @@
             {{#if this.devoured}}
             <div class="stuck">
               <div class="row no-gutters">
+                <form class="card-body" action="burger/update/{{this.id}}?_method=PUT" method="POST">
                   <h5>{{this.burger_name}}</h5>
+                  <input type="hidden" name="devoured" value="true">
               </div>
             </div>
             {{/if}}
