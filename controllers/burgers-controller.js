@@ -18,8 +18,7 @@ router.post("/", function(req, res) {
     "burger_name", "devoured"
   ], [
     req.body.burger_name, req.body.devoured
-  ], function(result) {
-    res.json({ id: result.insertId });
+  ], function() {
     res.redirect("/");
   });
 });
@@ -29,7 +28,7 @@ router.put("/:id", function(req, res) {
   burger.update({
      devoured: req.body.devoured
   }, condition,
-  function(result) {
+  function() {
      res.redirect("/");
   });
 });
