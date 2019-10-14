@@ -23,8 +23,8 @@ function objectToSql(ob) {
 }
 
 var orm = {
-  selectAll: function(table, cb) {
-    var qS = "select * from " + table + ";";
+  selectAll: function(input, cb) {
+    var qS = "select * from " + input + ";";
     conn.query(qS, function(err, res) {
       if(err) throw err;
       cb(res);
