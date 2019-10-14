@@ -1,4 +1,4 @@
-var conn = require("/connection.js");
+var conn = require("./connection.js");
 
 function questMarks(num) {
   var arr = [];
