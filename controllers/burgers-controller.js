@@ -15,21 +15,22 @@ router.get("/", function(req, res) {
 
 router.post("/", function(req, res) {
   burger.create([
-    "burger_name"
+    "burger_name", "devoured"
   ], [
-    req.body.burger_name
+    req.body.burger_name, req.body.devoured
   ], function(result) {
     res.json({ id: result.insertId });
+    res.redirect("/");
   });
 });
 
-router.put("/", function(req, res) {
+router.put("/:id", function(req, res) {
   var condition = "id = " + req.params.id;
   burger.update({
-     devoured: true
+     devoured: req.body.devoured
   }, condition,
   function(result) {
-     console.log(result);
+     res.redirect("/");
   });
 });
 
