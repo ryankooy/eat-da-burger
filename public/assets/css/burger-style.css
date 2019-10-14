@@ -61,7 +61,7 @@ h3 {
   line-height: 10px;
 }
 
-.devour, .stuck {
+.devour, .inlineblock .stuck {
   display: inline-block;
 }
 
