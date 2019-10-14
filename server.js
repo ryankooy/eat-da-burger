@@ -8,6 +8,7 @@ var PORT = process.env.PORT || 3030;
 app.use(express.static(process.cwd() + "/public"));
 
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.use(methodOverride("_method"));
 
