@@ -29,8 +29,9 @@ router.post("/burger/create", function(req, res) {
 
 router.put("/burger/update/:id", function(req, res) {
   var condition = "id = " + req.params.id;
+  
   burger.update({
-     devoured: 1
+     devoured: req.body.devoured
   }, condition,
   function() {
      res.redirect("/burger");
