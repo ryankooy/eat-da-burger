@@ -49,6 +49,7 @@ h3 {
   height: 80px;
   width: 100%;
   position: relative;
+  border: 1 solid lightcoral;
 }
 
 .card-title {
@@ -60,6 +61,19 @@ h3 {
   background-color: lightcoral;
 }
 
+.devour:active {
+  text-decoration: none;
+}
+
+#eat {
+  font-size: 16px;
+}
+
+#eat-burg {
+  font-size: 25px;
+  color: lightgreen;
+}
+
 #credit {
   color: lightcoral;
 }
@@ -68,7 +82,7 @@ h3 {
   .burgie, .stuck {
     position: relative;
     margin-left: 0;
-    width: 10rem;
+    width: 100%;
   }
 
   .burg {
