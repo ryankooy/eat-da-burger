@@ -23,7 +23,7 @@ router.post("/", function(req, res) {
   });
 });
 
-router.put("/:id", function(req, res) {
+router.put("/", function(req, res) {
   var condition = "id = " + req.params.id;
   burger.update({
      devoured: req.body.devoured
