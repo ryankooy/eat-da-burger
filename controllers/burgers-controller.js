@@ -29,10 +29,10 @@ router.post("/burger/create", function(req, res) {
 
 router.put("/burger/update/:id", function(req, res) {
   var condition = "id = " + req.params.id;
-  
-  burger.update({
-     devoured: req.body.devoured
-  }, condition,
+  var devour = "devoured = 1";
+  burger.update(
+  devour,
+  condition,
   function() {
      res.redirect("/burger");
   });
