@@ -4,6 +4,10 @@ var burger = require("../models/burger.js");
 var router = express.Router();
 
 router.get("/", function(req, res) {
+  res.redirect("/burger");
+});
+
+router.get("/burger", function(req, res) {
   burger.all(function(data) {
     var burgerObject = {
       burger: data
@@ -13,23 +17,23 @@ router.get("/", function(req, res) {
   });
 });
 
-router.post("/burgers", function(req, res) {
+router.post("/burger/create", function(req, res) {
   burger.create([
     "burger_name"
   ], [
     req.body.burger_name
-  ], function(data) {
-    res.redirect("/");
+  ], function() {
+    res.redirect("/burger");
   });
 });
 
-router.put("/burgers/:id", function(req, res) {
+router.put("/burger/update/:id", function(req, res) {
   var condition = "id = " + req.params.id;
   burger.update({
      devoured: req.body.devoured
   }, condition,
-  function(data) {
-     res.redirect("/");
+  function() {
+     res.redirect("/burger");
   });
 });
 
