@@ -82,20 +82,13 @@ h3 {
   text-decoration: none;
 }
 
-#eat {
-  font-size: 16px;
-}
-
 #eat-burg {
   font-size: 25px;
   line-height: 20px;
   color: lightgreen;
-}
-
-#eat, #eat-burg {
-  margin: auto;
   float: right;
 }
+
 
 .devoured {
   color: lightslategrey;
