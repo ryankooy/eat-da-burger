@@ -39,6 +39,10 @@ h3 {
   overflow: hidden;
 }
 
+.textaligncenter {
+  text-align: center;
+}
+
 .burg {
   max-width: 40px;
   max-height: 40px;
@@ -54,6 +58,10 @@ h3 {
 .card-title {
   font-size: 20px;
   line-height: 10px;
+}
+
+.devour, .stuck {
+  display: inline-block;
 }
 
 .devour:hover {
