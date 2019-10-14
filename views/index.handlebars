@@ -48,10 +48,10 @@
             {{#unless this.devoured}}
               <div class="card burgie">
                 <div class="row no-gutters">
-                  <div class="card-body">
-                    <h5 class="card-title">{{this.burger_name}}</h5>
-                    <button class="btn btn-sm my-2 my-sm-0 devour" trigger="0" type="submit" action="/" method="PUT">DEVOUR IT</button>
-                  </div>
+                 <form class="card-body" action="/{{this.id}}?_method=PUT" method="POST">
+                   <h5 class="card-title">{{this.burger_name}}</h5>
+                   <button class="btn btn-sm my-2 my-sm-0 devour" trigger="0" type="submit" action="/" method="PUT">DEVOUR!</button>
+                 </form>
                 </div>
               </div>
             {{/unless}}
@@ -62,7 +62,7 @@
         <h3>Devoured</h3>
         <ul>
           {{#each burger}}
-            {{#if this.devoured}}
+            {{#if devoured}}
             <div class="card stuck">
               <div class="row no-gutters">
                 <div class="card-body">
