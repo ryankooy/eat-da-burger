@@ -1,9 +1,9 @@
-<div class="all">
+<main class="all">
 
   <div class="container">
     <nav class="navbar fixed-top navbar-light bg-dark" id="navvie">
       <a class="navbar-brand"><h1 id="header">EAT DA BURGIE!</h1></a>
-      <form class="form-inline" action="/" method="POST">
+      <form class="form-inline" action="/burgers" method="POST">
         <input class="form-control mr-sm-2" id="new-burg" type="text">
         <button class="btn my-2 my-sm-0" id="go-burg" type="submit">Add Burgie</button>
       </form>
@@ -48,9 +48,8 @@
             {{#unless this.devoured}}
               <div class="card burgie">
                 <div class="row no-gutters">
-                 <form class="card-body" action="/" method="PUT">
+                 <form class="card-body" action="/burgers/{{this.id}}?_method=PUT" method="POST">
                    <h5 class="card-title">{{this.burger_name}}</h5>
-                   <input type="hidden" name="devoured" value="true">
                    <button class="btn btn-sm my-2 my-sm-0 devour" trigger="0" type="submit">DEVOUR!</button>
                  </form>
                 </div>
@@ -63,7 +62,7 @@
         <h3>Devoured</h3>
         <ul>
           {{#each burger}}
-            {{#if devoured}}
+            {{#if this.devoured}}
             <div class="stuck">
               <div class="row no-gutters" disabled>
                   <h5 class="card-title">{{this.burger_name}}</h5>
@@ -80,4 +79,4 @@
     <a href="https://www.freepik.com/free-photos-vectors/food" id="credit" target="_blank">Food vector created by dooder - www.freepik.com</a>
   </footer>
 
-</div>
+</main>
