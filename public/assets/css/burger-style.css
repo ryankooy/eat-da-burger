@@ -52,7 +52,8 @@ h3 {
 .burgie, .stuck {
   height: 80px;
   position: relative;
-  border: 1 solid lightcoral;
+  width: 100%;
+  border: 1px solid lightcoral;
 }
 
 .card-title {

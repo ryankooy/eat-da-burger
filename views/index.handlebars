@@ -43,7 +43,7 @@
     <div class="row">
       <div class="col-6 column1 textaligncenter">
         <h3>Select Your Yummy Burgie</h3>
-        <ul>
+        <ul class="textaligncenter">
           {{#each burger}}
             {{#unless this.devoured}}
               <form action="/burger/update/{{this.id}}?_method=PUT" method="POST">
