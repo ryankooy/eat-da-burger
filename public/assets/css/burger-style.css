@@ -65,8 +65,7 @@ h3 {
 .yum {
   font-size: 20px;
   line-height: 18px;
-  justify-content: center;
-  text-align: center;
+  float: right;
   margin: auto;
 }
 
