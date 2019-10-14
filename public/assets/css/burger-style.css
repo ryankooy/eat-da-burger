@@ -41,8 +41,8 @@ h3 {
 
 .flex-container {
   display: flex;
-  flex-direction: column-reverse;
-  flex-wrap: wrap-reverse;
+  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
