@@ -30,7 +30,7 @@ router.post("/burger/create", function(req, res) {
 router.put("/burger/update/:id", function(req, res) {
   var condition = "id = " + req.params.id;
   burger.update({
-     devoured: req.body.devoured
+     devoured: 1
   }, condition,
   function() {
      res.redirect("/burger");
