@@ -44,7 +44,7 @@
       <div class="col-6 column1">
         <h3>Select Your Yummy Burgie</h3>
         <ul>
-          {{#each burgers}}
+          {{#each burger}}
             {{#unless this.devoured}}
               <div class="card burgie">
                 <div class="row no-gutters">
@@ -62,7 +62,7 @@
       <div class="col-6 column2">
         <h3>Devoured</h3>
         <ul>
-          {{#each burgers}}
+          {{#each burger}}
             {{#if devoured}}
             <div class="stuck">
               <div class="row no-gutters" disabled>
