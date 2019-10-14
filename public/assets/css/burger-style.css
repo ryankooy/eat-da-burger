@@ -90,9 +90,13 @@ h3 {
   color: lightgreen;
 }
 
+#eat-burg:hover {
+  color: white;
+}
+
 #eat, #eat-burg {
-  display: inline-block;
   margin: auto;
+  text-align: center;
 }
 
 .devoured {
