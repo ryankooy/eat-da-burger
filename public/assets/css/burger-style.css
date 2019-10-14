@@ -47,7 +47,6 @@ h3 {
 
 .burgie, .stuck {
   height: 80px;
-  width: 100%;
   position: relative;
   border: 1 solid lightcoral;
 }
@@ -72,6 +71,10 @@ h3 {
 #eat-burg {
   font-size: 25px;
   color: lightgreen;
+}
+
+.center {
+  text-align: center;
 }
 
 #credit {
