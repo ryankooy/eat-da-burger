@@ -3,7 +3,7 @@
   <div class="container">
     <nav class="navbar fixed-top navbar-light bg-dark" id="navvie">
       <a class="navbar-brand"><h1 id="header">EAT DA BURGIE!</h1></a>
-      <form class="form-inline">
+      <form class="form-inline" action="/" method="POST">
         <input class="form-control mr-sm-2" id="new-burg" type="text">
         <button class="btn my-2 my-sm-0" id="go-burg" type="submit" action="/" method="POST">Add Burgie</button>
       </form>
@@ -44,13 +44,14 @@
       <div class="col-6 column1">
         <h3>Select Your Yummy Burgie</h3>
         <ul>
-          {{#each burger}}
+          {{#each burgers}}
             {{#unless this.devoured}}
               <div class="card burgie">
                 <div class="row no-gutters">
                  <form class="card-body" action="/{{this.id}}?_method=PUT" method="POST">
                    <h5 class="card-title">{{this.burger_name}}</h5>
-                   <button class="btn btn-sm my-2 my-sm-0 devour" trigger="0" type="submit" action="/" method="PUT">DEVOUR!</button>
+                   <input type="hidden" name="devoured" value="true">
+                   <button class="btn btn-sm my-2 my-sm-0 devour" trigger="0" type="submit">DEVOUR!</button>
                  </form>
                 </div>
               </div>
@@ -61,13 +62,11 @@
       <div class="col-6 column2">
         <h3>Devoured</h3>
         <ul>
-          {{#each burger}}
+          {{#each burgers}}
             {{#if devoured}}
-            <div class="card stuck">
-              <div class="row no-gutters">
-                <div class="card-body">
+            <div class="stuck">
+              <div class="row no-gutters" disabled>
                   <h5 class="card-title">{{this.burger_name}}</h5>
-                </div>
               </div>
             </div>
             {{/if}}
@@ -82,8 +81,8 @@
   </footer>
 
   <script type="text/javascript"
-     var eat = $(".devour");
-     var burg = $(".burgie");
+    // var eat = $(".devour");
+    // var burg = $(".burgie");
     // $(".burgie").on("click", function() {
       // $(this).remove();
       // if($(this(eat)).attr("trigger") === "0") {
