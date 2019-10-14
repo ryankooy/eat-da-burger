@@ -4,7 +4,7 @@
     <nav class="navbar fixed-top navbar-light bg-dark" id="navvie">
       <a class="navbar-brand"><h1 id="header">EAT DA BURGIE!</h1></a>
       <form class="form-inline">
-        <input class="form-control mr-sm-2" id="new-burg" type="text" placeholder="Add A Burgie" aria-label="Search">
+        <input class="form-control mr-sm-2" id="new-burg" type="text" placeholder="Add A Burgie">
         <button class="btn my-2 my-sm-0" id="go-burg" type="submit">Submit</button>
       </form>
     </nav>
@@ -45,11 +45,11 @@
         <h3>Select Your Yummy Burgie</h3>
         <ul>
           {{#each burger}}
-            {{#unless devoured}}
-              <div class="card burgie" value="{{id}}" trigger="0">
+            {{#unless this.devoured}}
+              <div class="card burgie" trigger="0">
                 <div class="row no-gutters">
                   <div class="card-body">
-                    <h5 class="card-title">{{burger_name}}</h5>
+                    <h5 class="card-title">{{this.burger_name}}</h5>
                     <button class="btn btn-sm my-2 my-sm-0 devour" type="submit">DEVOUR IT</button>
                   </div>
                 </div>
@@ -62,11 +62,11 @@
         <h3>Devoured</h3>
         <ul>
           {{#each burger}}
-            {{#if devoured}}
+            {{#if this.devoured}}
             <div class="card stuck">
               <div class="row no-gutters">
                 <div class="card-body">
-                  <h5 class="card-title">{{burger_name}}</h5>
+                  <h5 class="card-title">{{this.burger_name}}</h5>
                 </div>
               </div>
             </div>
@@ -81,16 +81,20 @@
     <a href="https://www.freepik.com/free-photos-vectors/food" id="credit" target="_blank">Food vector created by dooder - www.freepik.com</a>
   </footer>
 
+  <script src="../models/burger.js"></script>
   <script type="text/javascript">
-    $(".go-burg").on("click", function() {
-      var burg = $("#new-burg").val();
+    $("#go-burg").on("click", function() {
+      var newBurg = $("#new-burg").val();
+      var burg = {
+        burger_name: newBurg,
+      }
+      burger.insertOne("burger_name", burg);
     });
     
     $(".devour").on("click", function() {
-      if($(".burgie").attr("trigger") === "0") {
-        $(".burgie").animate({ "left": "600px" }, 700);
-        $(".burgie").attr("trigger", "1");
-      };
+      var eat = $(".burgie");
+      eat.animate({ "left": "600px" }, 700);
+      eat.attr("trigger", "1");
     });
   </script>
 
