@@ -46,17 +46,19 @@
         <ul>
           {{#each burger}}
             {{#unless this.devoured}}
-              <button class="card burgie devour" trigger="0" type="submit">
-                <div class="row no-gutters">
-                 <form class="card-body" action="/burger/update/{{this.id}}?_method=PUT" method="POST">
-                    <div class="card-title center">
-                      <p id="eat">DEVOUR</p>
-                      <p id="eat-burg">{{this.burger_name}}</p>
-                      <input type="hidden" name="devoured" value="false">
+              <form action="/burger/update/{{this.id}}?_method=PUT" method="POST">
+                <button class="card burgie devour" trigger="0" type="submit">
+                  <div class="row no-gutters">
+                    <div class="card-body">
+                      <div class="card-title center">
+                        <p id="eat">DEVOUR</p>
+                        <p id="eat-burg">{{this.burger_name}}</p>
+                        <input type="hidden" name="devoured" value="false">
+                      </div>
                     </div>
-                 </form>
-                </div>
-              </button>
+                  </div>
+                </button>
+              </form>
             {{/unless}}
           {{/each}}
         </ul>
