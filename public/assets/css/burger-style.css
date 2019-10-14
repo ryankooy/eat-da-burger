@@ -56,12 +56,6 @@ h3 {
   line-height: 10px;
 }
 
-.devour {
-  width: 100%;
-  max-width: 150px;
-  height: 30px;
-}
-
 .devour:hover {
   background-color: lightcoral;
 }
