@@ -64,11 +64,12 @@
         <ul>
           {{#each burger}}
             {{#if this.devoured}}
-            <div class="stuck">
+            <div class="card stuck">
               <div class="row no-gutters">
                 <form class="card-body" action="/burger/update/{{this.id}}?_method=PUT" method="POST">
-                  <h5>{{this.burger_name}}</h5>
+                  <h5 class="card-title">{{this.burger_name}}</h5>
                   <input type="hidden" name="devoured" value="true">
+                </form>
               </div>
             </div>
             {{/if}}
