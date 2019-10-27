@@ -64,7 +64,6 @@ h3 {
 
 .yum {
   font-size: 20px;
-  line-height: 18px;
   float: right;
   margin: auto;
 }
@@ -83,15 +82,16 @@ h3 {
 }
 
 #eat-burg {
-  font-size: 25px;
-  line-height: 20px;
-  color: lightgreen;
-  float: right;
+  margin-top: 5px;
+  font-size: 30px;
+  line-height: 25px;
+  color: black;
 }
 
 
 .devoured {
   color: lightslategrey;
+  font-size: 20px;
   display: inline-block;
   margin: auto;
 }

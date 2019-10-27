@@ -1,6 +1,5 @@
 var express = require("express");
 var methodOverride = require("method-override");
-// var bodyParser = require("body-parser");
 
 var app = express();
 var PORT = process.env.PORT || 3030;
@@ -8,7 +7,7 @@ var PORT = process.env.PORT || 3030;
 app.use(express.static(process.cwd() + "/public"));
 
 app.use(express.urlencoded({ extended: false }));
-// app.use(bodyParser.json());
+app.use(express.json());
 
 app.use(methodOverride("_method"));
 
