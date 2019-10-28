@@ -24,7 +24,8 @@ var conn = require("./connection.js");
 
 var orm = {
   selectAll: function(input, cb) {
-    var qS = "select * from " + input + ";";
+    var qS = "select * from " + input;
+    qS += " order by id desc;";
     conn.query(qS, function(err, res) {
       if(err) throw err;
       cb(res);

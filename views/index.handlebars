@@ -64,7 +64,7 @@
       </div>
       <div class="col-6 column2 textaligncenter flex-container">
         <h3>Devoured</h3>
-        <ul>
+        <ul id="2">
           {{#each burger}}
             {{#if this.devoured}}
             <div class="card stuck flex-item">
@@ -87,9 +87,9 @@
   </footer>
 
   <script type="text/javascript">
-    $(".devour").on("click", function() {
-      $(this).animate({ right: 600px }, 700);
-    });
+    // $(".devour").on("click", function() {
+    //  $(this).animate({ right: 600px }, 700);
+    //  });
   </script>
 
 </main>
