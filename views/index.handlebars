@@ -4,7 +4,7 @@
     <nav class="navbar fixed-top navbar-light bg-dark" id="navvie">
       <a class="navbar-brand"><h1 id="header">EAT DA BURGIE!</h1></a>
       <form class="form-inline" action="/burger/create" method="POST">
-        <input class="form-control mr-sm-2" id="new-burg" name="burger_name" type="text">
+        <input class="form-control mr-sm-2" id="new-burg" onkeyup="stoppedTyping()" name="burger_name" type="text">
         <button class="btn my-2 my-sm-0" id="go-burg" type="submit">Add Burgie</button>
       </form>
     </nav>
@@ -12,8 +12,6 @@
 
   <div class="container cont2">
     <div class="d-flex justify-content-center">
-      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
-      <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
       <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
       <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
       <img src="/assets/img/burg.jpg" class="card-img-left burg" alt="Burg">
@@ -77,14 +75,19 @@
     </div>
   </div>
 
+  <script type="text/javascript">
+    function stoppedTyping() {
+      var burgText = document.getElementById('new-burg').value;
+      if (burgText.length > 0) { 
+        document.getElementById('go-burg').disabled = false; 
+      } else { 
+        document.getElementById('go-burg').disabled = true;
+      }
+    }
+  </script>
+  
   <footer class="d-flex justify-content-center">
     <a href="https://www.freepik.com/free-photos-vectors/food" id="credit" target="_blank">Food vector created by dooder - www.freepik.com</a>
   </footer>
-
-  <script type="text/javascript">
-    // $(".devour").on("click", function() {
-    //  $(this).animate({ right: 600px }, 700);
-    //  });
-  </script>
 
 </main>
